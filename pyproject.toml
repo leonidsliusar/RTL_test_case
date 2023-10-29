@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "rtl-test-case"
+version = "0.1.0"
+description = ""
+authors = ["Leonid Sliusar <loslyusar@gmail.com>"]
+readme = "README.md"
+packages = [{include = "rtl_test_case"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+aiogram = "^3"
+pydantic = "^2.4.2"
+pydantic-settings = "^2.0.3"
+motor = "^3.3.1"
+python-dateutil = "^2.8.2"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
+pytest-asyncio = "^0.21.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+pythonpath = "./app"
+testpaths = [
+    "tests",
+]
